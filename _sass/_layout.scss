@@ -1,0 +1,37 @@
+/* =========================================================
+   ESTRUTURA E LAYOUT
+   ---------------------------------------------------------
+   Regras responsáveis pelo contentor central, secções e
+   grelhas reutilizáveis.
+========================================================= */
+
+/* ---------------------------------------------------------
+   CONTENTOR CENTRAL
+   ---------------------------------------------------------
+   Centraliza o conteúdo e controla a largura máxima.
+--------------------------------------------------------- */
+.container {
+  width: min(100% - 40px, var(--container-width));
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   SECÇÕES GERAIS
+   ---------------------------------------------------------
+   Espaçamento vertical padrão para os blocos da landing page.
+--------------------------------------------------------- */
+section {
+  padding: var(--section-padding) 0;
+}
+
+/* ---------------------------------------------------------
+   GRELHA DE CARTÕES
+   ---------------------------------------------------------
+   Sistema base reutilizável para serviços, portfólio
+   e novidades.
+--------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}

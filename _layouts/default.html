@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}{% unless page.url == "/" %} | TEMPLATE{% endunless %}</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/favicon-192.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon-180.png' | relative_url }}">
+  <meta name="theme-color" content="#0b0f19">
+
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

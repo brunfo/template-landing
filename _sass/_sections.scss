@@ -1,0 +1,42 @@
+/* =========================================================
+   TÍTULOS E BLOCOS DE SECÇÃO
+   ---------------------------------------------------------
+   Regras visuais aplicadas às secções reutilizáveis da
+   homepage.
+========================================================= */
+
+/* ---------------------------------------------------------
+   FUNDO DE SECÇÕES
+   ---------------------------------------------------------
+   Mantém uma leitura mais rica da página sem criar
+   contrastes agressivos entre blocos.
+--------------------------------------------------------- */
+.services,
+.portfolio,
+.blog-preview {
+  background: var(--bg-section);
+}
+
+/* ---------------------------------------------------------
+   TÍTULOS PRINCIPAIS DAS SECÇÕES
+   ---------------------------------------------------------
+   Unifica o aspeto de Serviços, Portfólio e Novidades.
+--------------------------------------------------------- */
+.services h2,
+.portfolio h2,
+.blog-preview h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   ESPAÇAMENTO ENTRE SECÇÕES
+   ---------------------------------------------------------
+   Permite pequenas diferenças visuais sem rebentar a
+   coerência do conjunto.
+--------------------------------------------------------- */
+.portfolio,
+.blog-preview {
+  border-top: none; /*1px solid var(--border-soft);*/
+}

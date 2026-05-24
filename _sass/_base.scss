@@ -1,0 +1,98 @@
+/* =========================================================
+   BASE GLOBAL
+   ---------------------------------------------------------
+   Regras globais aplicadas a todo o template:
+   - reset básico
+   - tipografia
+   - fundo e cor base
+   - comportamento de imagens e links
+   - estrutura global para sticky footer
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  /* -------------------------------------------------------
+     Garante que a raiz do documento pode ocupar a altura
+     total do ecrã.
+     Isto ajuda o body a esticar corretamente quando
+     queremos manter o footer no fundo.
+  ------------------------------------------------------- */
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+
+  /* -------------------------------------------------------
+     STICKY FOOTER
+     -------------------------------------------------------
+     O body passa a funcionar como uma coluna vertical:
+     - header no topo
+     - conteúdo no meio
+     - footer no fim
+
+     Quando a página tem pouco conteúdo, o body ocupa pelo
+     menos a altura inteira do viewport e o footer fica
+     encostado ao fundo.
+  ------------------------------------------------------- */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------
+   CONTEÚDO PRINCIPAL DO SITE
+   ---------------------------------------------------------
+   Esta classe deve envolver o {{ content }} no layout
+   default.html.
+
+   O flex: 1 faz esta zona crescer para ocupar o espaço
+   disponível entre header e footer.
+--------------------------------------------------------- */
+.site-content {
+  flex: 1;
+}
+
+/* ---------------------------------------------------------
+   TIPOGRAFIA BASE
+   ---------------------------------------------------------
+   Mantemos hierarquia simples e legível.
+--------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+p {
+  margin-top: 0;
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

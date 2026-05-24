@@ -1,0 +1,57 @@
+/* =========================================================
+   VARIÁVEIS GERAIS DO TEMPLATE
+   ---------------------------------------------------------
+   Este ficheiro concentra os valores reutilizáveis do
+   projeto: cores, larguras, espaçamentos, sombras, raios
+   e transições.
+
+   Se no futuro quiseres adaptar este template a outra
+   marca, este é um dos primeiros ficheiros a rever.
+
+   Paleta base:
+   Inspirada no visual do site do teu irmão, com fundo
+   escuro, cartões preenchidos e destaque azul-ciano.
+========================================================= */
+
+:root {
+  /* -------------------------------------------------------
+     LARGURAS E ESPAÇAMENTOS
+     -------------------------------------------------------
+     Estes valores ajudam a manter consistência entre secções.
+  ------------------------------------------------------- */
+  --container-width: 1200px;
+  --section-padding: 80px;
+  --section-padding-mobile: 60px;
+  --card-gap: 24px;
+  --card-radius: 18px;
+
+  /* -------------------------------------------------------
+     PALETA PRINCIPAL
+     -------------------------------------------------------
+     Cores inspiradas na base visual já usada no outro site.
+  ------------------------------------------------------- */
+  --bg-dark: #0b0f19;
+  --bg-section: #0b0f19;
+  --bg-card: #151c2c;
+  --bg-card-hover: #1b2638;
+
+  --accent: #00d2ff;
+  --accent-soft: rgba(0, 210, 255, 0.16);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-soft: #cbd5e1;
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 210, 255, 0.28);
+
+  /* -------------------------------------------------------
+     SOMBRAS E TRANSIÇÕES
+     -------------------------------------------------------
+     Mantêm os cartões com volume sem exagerar no efeito.
+  ------------------------------------------------------- */
+  --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  --card-shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.28);
+
+  --transition-base: 0.3s ease;
+}

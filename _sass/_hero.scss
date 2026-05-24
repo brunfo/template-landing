@@ -1,0 +1,246 @@
+/* =========================================================
+   SECÇÃO HERO
+   ---------------------------------------------------------
+   Este ficheiro controla o bloco principal de abertura
+   da landing page.
+
+   Objetivos visuais:
+   - criar impacto logo no topo;
+   - equilibrar texto e componente visual;
+   - reforçar a identidade do template;
+   - manter coerência com o sistema de cartões já definido.
+
+   Estrutura visual:
+   - coluna esquerda: texto e ações
+   - coluna direita: painel com cartões informativos
+========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0 90px;
+  background:
+    radial-gradient(circle at top left, rgba(0, 210, 255, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(0, 210, 255, 0.05), rgba(0, 0, 0, 0) 60%);
+}
+
+/* ---------------------------------------------------------
+   GRELHA PRINCIPAL DO HERO
+   ---------------------------------------------------------
+   Divide o hero em duas colunas:
+   - conteúdo textual
+   - painel visual
+--------------------------------------------------------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 48px;
+}
+
+/* ---------------------------------------------------------
+   BLOCO DE TEXTO
+   ---------------------------------------------------------
+   Agrupa kicker, título, descrição, botões e highlights.
+--------------------------------------------------------- */
+.hero-content {
+  max-width: 680px;
+}
+
+/* ---------------------------------------------------------
+   KICKER
+   ---------------------------------------------------------
+   Pequena linha introdutória acima do título principal.
+--------------------------------------------------------- */
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 210, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(0, 210, 255, 0.08);
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   TÍTULO PRINCIPAL
+   ---------------------------------------------------------
+   É o elemento com maior peso visual do hero.
+--------------------------------------------------------- */
+.hero h1 {
+  margin-bottom: 22px;
+  font-size: 3.5rem;
+  line-height: 1.08;
+  color: var(--text-main);
+}
+
+/* ---------------------------------------------------------
+   TEXTO DESCRITIVO
+   ---------------------------------------------------------
+   Explica a proposta do template de forma curta.
+--------------------------------------------------------- */
+.hero p {
+  max-width: 720px;
+  margin-bottom: 28px;
+  font-size: 1.08rem;
+  color: var(--text-soft);
+}
+
+/* ---------------------------------------------------------
+   AÇÕES DO HERO
+   ---------------------------------------------------------
+   Alinha os dois botões principais.
+--------------------------------------------------------- */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+/* ---------------------------------------------------------
+   SISTEMA BASE DE BOTÕES
+   ---------------------------------------------------------
+   Este sistema é útil não só para o hero, mas também para
+   futuras secções da landing page.
+--------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   BOTÃO PRINCIPAL
+--------------------------------------------------------- */
+.btn-primary {
+  background: var(--accent);
+  color: #071019;
+}
+
+.btn-primary:hover {
+  background: #33dcff;
+  color: #071019;
+}
+
+/* ---------------------------------------------------------
+   BOTÃO SECUNDÁRIO
+--------------------------------------------------------- */
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(0, 210, 255, 0.28);
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   HIGHLIGHTS DO HERO
+   ---------------------------------------------------------
+   Lista curta de benefícios.
+--------------------------------------------------------- */
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-highlights li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-soft);
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------
+   PAINEL VISUAL DO HERO
+   ---------------------------------------------------------
+   Coluna direita com blocos informativos que seguem a mesma
+   linguagem de cartões do resto do template.
+--------------------------------------------------------- */
+.hero-panel {
+  display: grid;
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------
+   CARTÃO PRINCIPAL DO PAINEL
+--------------------------------------------------------- */
+.hero-panel-main {
+  padding: 30px;
+}
+
+/* ---------------------------------------------------------
+   GRELHA INTERNA DOS CARTÕES PEQUENOS
+--------------------------------------------------------- */
+.hero-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------
+   CARTÕES DO PAINEL
+   ---------------------------------------------------------
+   Reaproveitam a lógica visual de caixas preenchidas.
+--------------------------------------------------------- */
+.hero-panel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.hero-panel-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: var(--text-main);
+}
+
+.hero-panel-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   PEQUENOS ELEMENTOS DE APOIO
+--------------------------------------------------------- */
+.panel-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.panel-number {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+}

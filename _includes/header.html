@@ -1,0 +1,95 @@
+<!-- =========================================================
+     HEADER / NAVBAR PRINCIPAL
+     ---------------------------------------------------------
+     Este bloco representa a navegação principal da landing page.
+
+     Estrutura:
+     - logo / nome da marca à esquerda
+     - botão do menu mobile
+     - links de navegação ao centro / direita
+     - redes sociais no extremo direito
+
+     Notas:
+     - Os links usam âncoras da homepage com relative_url,
+       para continuarem a funcionar também nas subpáginas.
+     - O botão mobile usa aria-controls e aria-expanded para
+       melhorar acessibilidade e permitir controlo por JS.
+========================================================= -->
+
+<header class="navbar">
+  <div class="container navbar-container">
+
+    <!-- -----------------------------------------------------
+         LOGO / MARCA
+         -----------------------------------------------------
+         Para já usamos texto.
+         Mais tarde podes trocar por imagem <img> sem mudar
+         a estrutura base do header.
+    ------------------------------------------------------ -->
+    <a href="{{ '/' | relative_url }}#topo" class="logo" aria-label="Página inicial do template">
+      TEMPLATE<span>.</span>
+    </a>
+
+    <!-- -----------------------------------------------------
+         BOTÃO DO MENU MOBILE
+         -----------------------------------------------------
+         Fica visível em ecrãs mais pequenos.
+         Em desktop é escondido por CSS.
+    ------------------------------------------------------ -->
+    <button
+      class="menu-toggle"
+      id="mobile-menu"
+      aria-label="Abrir menu de navegação"
+      aria-controls="main-nav"
+      aria-expanded="false"
+      type="button"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- -----------------------------------------------------
+         NAVEGAÇÃO PRINCIPAL
+         -----------------------------------------------------
+         Os links apontam para as secções da homepage.
+    ------------------------------------------------------ -->
+    <nav id="main-nav" class="main-nav">
+      <ul class="nav-links">
+        <li><a href="{{ '/' | relative_url }}#topo">Início</a></li>
+        <li><a href="{{ '/' | relative_url }}#servicos">Serviços</a></li>
+        <li><a href="{{ '/' | relative_url }}#portfolio">Portfólio</a></li>
+        <li><a href="{{ '/' | relative_url }}#blog">Novidades</a></li>
+        <li><a href="{{ '/' | relative_url }}#contacto" class="btn-nav">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- -----------------------------------------------------
+         REDES SOCIAIS
+         -----------------------------------------------------
+         Este bloco fica no extremo direito do header em
+         desktop, para deixar o acesso às redes sempre visível.
+
+         Para já deixamos o Facebook, que é a rede confirmada.
+         Se depois quiseres Instagram / YouTube / etc.,
+         basta repetir a mesma estrutura.
+    ------------------------------------------------------ -->
+    <div class="nav-social" aria-label="Redes sociais">
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook da testes"
+        class="social-link"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.09 5.66 21.25 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.9h-2.34V22C18.34 21.25 22 17.09 22 12.07Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</header>

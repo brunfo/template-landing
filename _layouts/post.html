@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<!-- =========================================================
+     LAYOUT DE POST
+     ---------------------------------------------------------
+     Este ficheiro renderiza uma página individual de post,
+     mas herda o layout base do site.
+
+     Assim, o post continua a ter:
+     - cabeçalho / navbar
+     - estilos globais
+     - footer
+     - scripts comuns
+========================================================= -->
+
+<main class="post-page">
+  <section class="post-hero">
+    <div class="container">
+      <p class="post-meta">
+        Publicado em {{ page.date | date: "%d/%m/%Y" }}
+      </p>
+
+      <h1>{{ page.title }}</h1>
+
+      {% if page.image %}
+        <img
+          src="{{ page.image }}"
+          alt="{{ page.title }}"
+          class="post-featured-image"
+        >
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="post-body">
+    <div class="container">
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,117 @@
+<!-- =========================================================
+     SECÇÃO CONTACTO
+     ---------------------------------------------------------
+     Esta secção reutiliza a mesma lógica que foi usada
+     no site do teu irmão, mas adaptada à organização deste
+     template em Jekyll.
+
+     Estrutura:
+     - cabeçalho da secção
+     - cartão com dados de contacto
+     - cartão com formulário
+
+     Nota:
+     O formulário continua a usar Web3Forms.
+========================================================= -->
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <!-- -----------------------------------------------------
+         CABEÇALHO DA SECÇÃO
+         -----------------------------------------------------
+         Mantemos um título e subtítulo para a secção ficar
+         coerente com o resto da homepage.
+    ------------------------------------------------------ -->
+    <div class="section-heading">
+      <h2>Contacto</h2>
+      <p class="section-subtitle">
+        Fala connosco sobre o teu projeto, serviço ou ideia.
+      </p>
+    </div>
+
+    <!-- -----------------------------------------------------
+         LAYOUT PRINCIPAL
+         -----------------------------------------------------
+         Duas áreas principais:
+         - esquerda: informação de contacto
+         - direita: formulário
+    ------------------------------------------------------ -->
+    <div class="contact-layout">
+      <div class="contact-info-card">
+        <h3>Vamos Trabalhar Juntos?</h3>
+        <p>
+          Explica-nos o teu projeto e respondemos em menos de
+          24 horas.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-label">Telefone</span>
+            <a href="tel:+351000000000" class="contact-link">
+              +351 000 000 000
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:email@email.com" class="contact-link">
+              email@email.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Localização</span>
+            <p class="contact-text">7350-504 PORTUGAL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-form"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="de7e4241-031c-41dc-b408-7dcd6bf8232e"
+          >
+
+          <input type="checkbox" name="botcheck" class="hidden-honeypot">
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="Nome"
+              placeholder="Teu Nome"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              name="Email"
+              placeholder="Teu Email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <textarea
+              name="Mensagem"
+              placeholder="Fala-nos sobre o teu projeto..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

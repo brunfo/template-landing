@@ -1,0 +1,231 @@
+/* =========================================================
+   HEADER / NAVBAR
+   ---------------------------------------------------------
+   Esta secção controla:
+   - barra superior fixa
+   - alinhamento de logo, navegação e redes sociais
+   - menu desktop
+   - botão mobile
+   - comportamento responsivo do menu
+
+   O objetivo é manter um aspeto semelhante ao navbar
+   usado no outro site: escuro, limpo, profissional e com
+   destaque azul no botão principal.
+========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ---------------------------------------------------------
+   CONTENTOR INTERNO DA NAVBAR
+   ---------------------------------------------------------
+   Alinha horizontalmente:
+   - logo à esquerda
+   - menu ao centro / direita
+   - redes sociais no extremo direito
+
+   O gap controla o espaço entre estes blocos principais.
+--------------------------------------------------------- */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 82px;
+}
+
+/* ---------------------------------------------------------
+   LOGO / MARCA
+   ---------------------------------------------------------
+   Estruturado de forma a permitir trocar texto por imagem
+   no futuro sem rebentar o layout.
+--------------------------------------------------------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   BLOCO DE NAVEGAÇÃO
+   ---------------------------------------------------------
+   Em desktop, este bloco ocupa o espaço intermédio da
+   navbar e empurra as redes sociais para o extremo direito.
+--------------------------------------------------------- */
+.main-nav {
+  margin-left: auto;
+}
+
+/* ---------------------------------------------------------
+   LISTA DE LINKS
+   ---------------------------------------------------------
+   Estrutura principal do menu em desktop.
+--------------------------------------------------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  font-weight: 500;
+  transition:
+    color var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   BOTÃO PRINCIPAL DA NAVBAR
+   ---------------------------------------------------------
+   Usado para destacar a ação principal no menu.
+--------------------------------------------------------- */
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #071019 !important;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.18);
+}
+
+.btn-nav:hover {
+  background: #33dcff;
+  color: #071019 !important;
+}
+
+/* =========================================================
+   REDES SOCIAIS NA NAVBAR
+   ---------------------------------------------------------
+   Este bloco fica visível no desktop, à direita do menu.
+
+   Serve para dar acesso rápido às redes sociais sem misturar
+   esses links com a navegação principal do site.
+========================================================= */
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   CADA ÍCONE SOCIAL
+   ---------------------------------------------------------
+   Mantemos um visual discreto:
+   - formato circular
+   - borda subtil
+   - hover com destaque da cor principal
+--------------------------------------------------------- */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: var(--text-main);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base),
+    transform var(--transition-base);
+}
+
+.social-link:hover {
+  color: var(--accent);
+  border-color: rgba(0, 210, 255, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateY(-1px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------------------------------------------------------
+   BOTÃO HAMBURGER
+   ---------------------------------------------------------
+   Fica escondido em desktop e aparece no mobile.
+--------------------------------------------------------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text-main);
+  border-radius: 999px;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+/* =========================================================
+   RESPONSIVO
+   ---------------------------------------------------------
+   Em larguras menores:
+   - escondemos as redes sociais do topo
+   - mostramos o botão hamburger
+   - o menu passa a funcionar em modo mobile
+========================================================= */
+
+@media (max-width: 1024px) {
+  .nav-social {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+}

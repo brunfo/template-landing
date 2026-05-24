@@ -1,0 +1,305 @@
+/* =========================================================
+   RESPONSIVIDADE
+   ---------------------------------------------------------
+   Este ficheiro concentra os ajustes de comportamento
+   visual para ecrãs menores.
+
+   Objetivos principais:
+   - adaptar a grelha de cartões a tablet e mobile;
+   - reduzir o impacto visual do hero em ecrãs pequenos;
+   - ajustar larguras e espaçamentos;
+   - controlar o comportamento do menu mobile.
+
+   Regra importante deste projeto:
+   - em desktop, o hero pode ter estrutura dividida;
+   - em tablet e mobile, o hero deve ficar mais simples,
+     mais direto e mais próximo da lógica visual usada
+     no site do teu irmão.
+========================================================= */
+
+/* ---------------------------------------------------------
+   TABLET
+   ---------------------------------------------------------
+   A partir deste ponto:
+   - a grelha geral passa de 3 colunas para 2;
+   - o hero deixa de funcionar como duas colunas lado a lado;
+   - o conteúdo passa a uma leitura vertical mais simples;
+   - o painel lateral perde protagonismo.
+--------------------------------------------------------- */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* -------------------------------------------------------
+     HERO EM TABLET
+     -------------------------------------------------------
+     Aqui quebramos o efeito de ecrã dividido.
+     O hero passa a funcionar como bloco vertical.
+  ------------------------------------------------------- */
+  .hero {
+    padding: 90px 0 70px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 22px;
+  }
+
+  .hero-highlights {
+    gap: 10px;
+  }
+
+  /* -------------------------------------------------------
+     PAINEL DO HERO EM TABLET
+     -------------------------------------------------------
+     Em vez de parecer uma segunda coluna pesada,
+     passa a funcionar como bloco secundário mais discreto.
+  ------------------------------------------------------- */
+  .hero-panel {
+    display: block;
+  }
+
+  .hero-panel-main {
+    padding: 24px;
+  }
+
+  /* Escondemos os cartões secundários para aliviar o topo */
+  .hero-panel-grid {
+    display: none;
+  }
+
+  .hero-panel-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .hero-panel-card p {
+    font-size: 0.96rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   ---------------------------------------------------------
+   Em ecrãs pequenos:
+   - a grelha geral passa para 1 coluna;
+   - o hero fica ainda mais simples e compacto;
+   - mantemos apenas o conteúdo essencial;
+   - o painel lateral deixa de ter o efeito de "metade
+     direita do ecrã" e passa a ser apenas um bloco opcional.
+--------------------------------------------------------- */
+@media (max-width: 640px) {
+  section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    width: min(100% - 24px, var(--container-width));
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* -------------------------------------------------------
+     HERO EM MOBILE
+     -------------------------------------------------------
+     Mantemos a leitura mais parecida com a que tinhas
+     antes: foco no texto principal, menos peso visual,
+     menos elementos a competir pela atenção.
+  ------------------------------------------------------- */
+  .hero {
+    padding: 76px 0 56px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .hero p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-highlights {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-highlights li {
+    text-align: center;
+  }
+
+  /* -------------------------------------------------------
+     PAINEL DO HERO EM MOBILE
+     -------------------------------------------------------
+     Em mobile, o painel passa a ser um bloco simples e
+     compacto, sem grelha secundária.
+  ------------------------------------------------------- */
+  .hero-panel {
+    display: block;
+  }
+
+  .hero-panel-grid {
+    display: none;
+  }
+
+  .hero-panel-main {
+    padding: 22px;
+  }
+
+  .hero-panel-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .hero-panel-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================================
+   NAVBAR RESPONSIVA
+   ---------------------------------------------------------
+   Em tablet/mobile:
+   - mostra o botão hamburger;
+   - substitui o menu horizontal por um painel dropdown;
+   - esse painel abre alinhado à direita;
+   - o painel aparece logo por baixo do hamburger.
+========================================================= */
+
+@media (max-width: 900px) {
+  /* -------------------------------------------------------
+     BOTÃO HAMBURGER
+     -------------------------------------------------------
+     Passa a ficar visível em ecrãs menores.
+  ------------------------------------------------------- */
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  /* -------------------------------------------------------
+     BLOCO DA NAVEGAÇÃO
+     -------------------------------------------------------
+     Deixa de ocupar a largura toda.
+     Serve como âncora para o painel dropdown.
+  ------------------------------------------------------- */
+  .main-nav {
+    position: relative;
+    margin-left: 0;
+    width: auto;
+  }
+
+  /* -------------------------------------------------------
+     PAINEL DO MENU MOBILE
+     -------------------------------------------------------
+     Dropdown compacto, alinhado à direita.
+  ------------------------------------------------------- */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: auto;
+
+    width: min(190px, calc(100vw - 24px));
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+
+    margin: 0;
+    padding: 18px;
+    list-style: none;
+
+    background: #101726;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
+
+    text-align: right;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+
+    transition:
+      opacity var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  /* -------------------------------------------------------
+     ESTADO ABERTO DO MENU
+  ------------------------------------------------------- */
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* -------------------------------------------------------
+     ITENS DO MENU
+  ------------------------------------------------------- */
+  .nav-links li {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    text-align: right;
+  }
+
+  /* -------------------------------------------------------
+     BOTÃO DESTACADO DA NAVBAR
+  ------------------------------------------------------- */
+  .btn-nav {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

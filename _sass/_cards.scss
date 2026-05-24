@@ -1,0 +1,90 @@
+/* =========================================================
+   CARTÃO BASE
+   ---------------------------------------------------------
+   Este é o componente visual mais importante do template.
+
+   Filosofia:
+   - mesmo componente para várias secções;
+   - muda o conteúdo, não muda a base visual;
+   - cartões preenchidos, não transparentes.
+========================================================= */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  box-shadow: var(--card-shadow);
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card h3 {
+  margin-bottom: 14px;
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.card p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   LINKS DENTRO DE CARTÕES
+   ---------------------------------------------------------
+   Muito útil para a secção de novidades/blog.
+--------------------------------------------------------- */
+.card a {
+  color: inherit;
+}
+
+.card a:hover {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   CARTÃO CLICÁVEL
+   ---------------------------------------------------------
+   Esta variação permite que o próprio cartão seja um link.
+   É especialmente útil para novidades / blog, onde faz
+   mais sentido clicar em qualquer zona do cartão.
+--------------------------------------------------------- */
+a.card {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   FOCO VISÍVEL NO CARTÃO-LINK
+   ---------------------------------------------------------
+   Além do hover com rato, convém manter um estado visível
+   quando o utilizador navega por teclado.
+--------------------------------------------------------- */
+a.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ---------------------------------------------------------
+   TÍTULOS DENTRO DE CARTÕES-LINK
+   ---------------------------------------------------------
+   O hover do cartão inteiro passa a refletir-se também
+   no título, reforçando a ideia de elemento clicável.
+--------------------------------------------------------- */
+a.card:hover h3,
+a.card:focus-visible h3 {
+  color: var(--accent);
+}

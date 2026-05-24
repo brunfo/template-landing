@@ -1,0 +1,149 @@
+/* =========================================================
+   FOOTER
+   ---------------------------------------------------------
+   Este ficheiro controla o rodapé principal da landing page.
+
+   Objetivos:
+   - fechar visualmente a homepage;
+   - manter coerência com os cartões e com a secção de contacto;
+   - organizar navegação e contactos de forma limpa;
+   - evitar um footer demasiado pesado.
+========================================================= */
+
+/* ---------------------------------------------------------
+   BLOCO PRINCIPAL DO FOOTER
+   ---------------------------------------------------------
+   Criamos um espaço superior para separar bem o footer
+   da secção anterior.
+--------------------------------------------------------- */
+.site-footer {
+  padding: 32px 0 24px;
+  border-top: 1px solid var(--border-soft);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.01)
+    ),
+    var(--bg-card);
+}
+
+/* ---------------------------------------------------------
+   GRELHA PRINCIPAL DO FOOTER
+   ---------------------------------------------------------
+   Dividimos o footer em 3 colunas:
+   - marca / descrição
+   - links
+   - contactos
+--------------------------------------------------------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.9fr;
+  gap: 2rem;
+  padding-bottom: 24px;
+}
+
+/* ---------------------------------------------------------
+   BLOCO DA MARCA
+--------------------------------------------------------- */
+.footer-brand {
+  max-width: 420px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.footer-logo span {
+  color: var(--accent);
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   COLUNAS DO FOOTER
+--------------------------------------------------------- */
+.footer-column h3 {
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* ---------------------------------------------------------
+   LISTAS DE LINKS
+--------------------------------------------------------- */
+.footer-links {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   LINHA FINAL
+--------------------------------------------------------- */
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVO - TABLET
+--------------------------------------------------------- */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVO - MOBILE
+--------------------------------------------------------- */
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 28px 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+  }
+}

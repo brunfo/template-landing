@@ -1,0 +1,13 @@
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <h2>Portfólio</h2>
+    <div class="card-grid">
+      {% for item in site.data.portfolio %}
+        <article class="card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="services" id="servicos">
+  <div class="container">
+    <h2>Serviços</h2>
+    <div class="card-grid">
+      {% for item in site.data.services %}
+        <article class="card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

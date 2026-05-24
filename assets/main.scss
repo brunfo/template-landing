@@ -1,0 +1,33 @@
+---
+---
+
+/* =========================================================
+   FICHEIRO PRINCIPAL SCSS
+   ---------------------------------------------------------
+   Este ficheiro serve apenas como ponto de entrada.
+   A ideia é manter aqui o mínimo possível e distribuir
+   o código por ficheiros mais pequenos e fáceis de manter.
+
+   Ordem de importação:
+   1. Variáveis e tokens do projeto
+   2. Base global
+   3. Estrutura/layout
+   4. Secções específicas
+   5. Regras responsivas
+
+   Nota:
+   Mantemos a importação do tema base "minima" apenas
+   temporariamente, para garantir compatibilidade técnica
+   enquanto construímos o template.
+========================================================= */
+@import "minima";
+@import "variables";
+@import "base";
+@import "layout";
+@import "header";
+@import "hero";
+@import "cards";
+@import "sections";
+@import "responsive";
+@import "contact";
+@import "footer";
