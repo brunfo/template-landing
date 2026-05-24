@@ -1,5 +1,46 @@
-_site
-.sass-cache
-.jekyll-cache
+# =========================================================
+# JEKYLL / BUILD
+# ---------------------------------------------------------
+# Pasta gerada automaticamente quando fazes build local.
+# Não deve ser enviada para o repositório.
+# =========================================================
+_site/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+
+# =========================================================
+# BUNDLER / RUBY
+# ---------------------------------------------------------
+# Dependências locais e ficheiros temporários do ecossistema
+# Ruby/Bundler, caso apareçam no teu ambiente.
+# =========================================================
+.bundle/
+vendor/
+vendor/bundle/
+
+# =========================================================
+# LOGS / FICHEIROS TEMPORÁRIOS
+# ---------------------------------------------------------
+# Evita ficheiros locais de debug ou execução temporária.
+# =========================================================
+*.log
+*.tmp
+*.swp
+
+# =========================================================
+# SISTEMA OPERATIVO
+# ---------------------------------------------------------
+# Ficheiros invisíveis gerados por Windows/macOS.
+# =========================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================================================
+# EDITORES / IDE
+# ---------------------------------------------------------
+# Ficheiros de configuração local que não interessam
+# ao template em si.
+# =========================================================
+.vscode/
+.idea/
